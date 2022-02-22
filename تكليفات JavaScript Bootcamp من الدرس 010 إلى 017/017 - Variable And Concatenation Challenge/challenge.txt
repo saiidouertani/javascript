@@ -1,0 +1,9 @@
+let userTitle = "saiid",
+    userDescription = "ouertani",
+    userDate_Login = "16/02";
+let card = `<div class="card">
+    <h2>Hello ${userTitle}</h2>
+    <p>${userDescription}</p>
+    <span>${userDatelogin}</span>
+    </div>`;
+document.write(card.repeat(4));

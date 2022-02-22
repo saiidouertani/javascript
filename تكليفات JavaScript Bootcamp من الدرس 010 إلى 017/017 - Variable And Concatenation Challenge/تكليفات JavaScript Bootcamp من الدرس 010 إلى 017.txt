@@ -1,0 +1,27 @@
+let numberOne = 10,
+    numberTwo = 20;
+console.log(numberOne + "" + numberTwo);
+console.log(typeof (numberOne + "" + numberTwo));
+console.log(`${numberOne}${numberTwo}`);
+console.log(typeof `${numberOne}${numberTwo}`);
+console.log(numberOne + "\n" + numberTwo);
+console.log(`${numberTwo}
+${numberOne}`);
+
+console.log("---------------exercice 2----------------");
+
+console.log(elzero.innerHTML); // object
+console.log(typeof elzero); // object
+
+console.log("---------------exercice3 ----------------");
+
+console.log(
+    'I\'m In \n love \\\\ """ \'\'\' \n ++with++ \n \\"""\\""" \n ""javaScript""`` '
+);
+
+console.log("---------------exercice ----------------");
+
+let a = 21;
+let b = 20;
+let year = `_${b}${a}`.repeat(3);
+console.log(`${a}${year}_${b}`);

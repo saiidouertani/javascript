@@ -1,0 +1,20 @@
+let st = "Elzero Web School";
+let char = "";
+if (
+    `${st.includes("w") | st.includes("W") ? (char = "w") : (char = "")}` ===
+    "w"
+) {
+    console.log("Good");
+}
+
+if (st !== "string") {
+    console.log("Good");
+}
+
+if (`${typeof st.length}` === "number") {
+    console.log("Good");
+}
+
+if (`${st.substring(0, 6).repeat(2)}` === "ElzeroElzero") {
+    console.log("Good");
+}

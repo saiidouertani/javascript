@@ -1,0 +1,122 @@
+let num = 150; // "009"
+num.toString().length == 1
+    ? console.log(`00${num}`)
+    : num.toString().length == 2
+    ? console.log(`0${num}`)
+    : console.log(num);
+
+console.log("-------------exercice2--------------");
+
+let num1 = 9;
+let str = "9";
+let str2 = "20";
+
+// typeof str === typeof str2
+// ? console.log("{str} Is The Same Type As {str2} But Not The Same Value")
+
+//     : num1 == str
+//     ? console.log("{num1} Is The Same Value As {str} But Not The Same Type")
+//     : num1 !== str2
+//     ? console.log("{num1} Is The Same Value As {str} But Not The Same Type")
+//     :  str ==  num1
+//     ? console.log("{num1} Is The Same Value As {str}")
+
+//     : console.log("");
+
+if (num1 == str) {
+    console.log("{num1} Is The Same Value As {str}");
+    if (num1 !== str2) {
+        console.log("{num1} Is The Same Value As {str} But Not The Same Type");
+    }
+}
+if (num1 !== str2) {
+    console.log("{num1} Is Not The Same Value Or The Same Type As {str2}");
+}
+if (typeof str === typeof str2) {
+    console.log("{str} Is The Same Type As {str2} But Not The Same Value");
+}
+
+console.log("-------------exercice2--------------");
+
+let nume1 = 10;
+let nume2 = 30;
+let nume3 = "30";
+
+nume3 > nume1 && nume3 !== nume2
+    ? console.log(
+          "30 Is Larger Than 10 And Type string Not The Same Type As number"
+      )
+    : nume3 == nume2 && nume3 !== nume1
+    ? console.log(
+          "30 Is Larger Than 10 And Value Is The Same As 30 And Type string Not The Same Type As number"
+      )
+    : "";
+
+
+
+let numer1 = 11;
+let numer2 = 10;
+let numer3 = 11;
+let numer4 = 33;
+
+/*
+  Do Not Edit Below This Line
+  Needed Output
+  True 7 Times
+*/
+
+// Condition 1
+
+if (numer1 > numer2) {
+  console.log("True");
+} else {
+  console.log("False");
+}
+
+// Condition 2
+
+if (numer1 > numer2 && numer1 < numer4) {
+  console.log("True");
+} else {
+  console.log("False");
+}
+
+// Condition 3
+
+if (numer1 > numer2 && numer1 === numer3) {
+  console.log("True");
+} else {
+  console.log("False");
+}
+
+// Condition 4
+
+if ((numer1 + numer2) < numer4) {
+  console.log("True");
+} else {
+  console.log("False");
+}
+
+// Condition 5
+
+if ((numer1 + numer3) < numer4) {
+  console.log("True");
+} else {
+  console.log("False");
+}
+
+// Condition 6
+
+if ((numer1 + numer2 + numer3) < numer4) {
+  console.log("True");
+} else {
+  console.log("False");
+}
+
+// Condition 7
+
+if (numer4 - (numer1 + numer3) + numer2 === 21) {
+  console.log("True");
+} else {
+  console.log("False");
+}

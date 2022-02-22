@@ -1,0 +1,25 @@
+let day = "   monday  ";
+let complement;
+let firstletter;
+day = day.trim();
+complement = day.substring(1);
+firstletter = day.split("")[0].toLocaleUpperCase();
+day = firstletter + complement;
+console.log(day);
+
+switch (day) {
+    case "Monday" || "Thursday":
+        console.log("From 10:00 AM To 5:00 PM");
+        break;
+    case "Tuesday":
+        console.log("From 10:00 AM To 6:00 PM");
+        break;
+    case "Wednesday":
+        console.log("From 10:00 AM To 7:00 PM");
+        break;
+    case "Friday" || "Staurday" || "Sunday":
+        console.log("No Appointments Available");
+        break;
+    default:
+        console.log("Its Not A Valid Day");
+}
