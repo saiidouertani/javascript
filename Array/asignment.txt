@@ -1,0 +1,59 @@
+let myFriends = ['Ahmed', 'Elham', 'Osama', 'Gamal']
+let num = 3
+
+// Method 1
+console.log(myFriends.slice(false, num)) // ["Ahmed", "Elham", "Osama"];
+
+// Method 2
+console.log(myFriends.splice(true)) // ["Ahmed", "Elham", "Osama"];
+
+console.log('----------------exercice2-----------------')
+
+let friends = ['Ahmed', 'Eman', 'Osama', 'Gamal']
+
+friends = friends.splice(true, true + true)
+console.log(friends) // ["Eman", "Osama"]
+
+console.log('----------------exercice3-----------------')
+
+let arrOne = ['C', 'D', 'X']
+let arrTwo = ['A', 'B', 'Z']
+let finalArr = []
+finalArr = arrOne.concat(arrTwo).sort().reverse()
+
+console.log(finalArr) // ["Z", "X", "D", "C", "B", "A"]
+
+console.log('----------------exercice4-----------------')
+
+let website = 'Go'
+let words = [`${website}ogle`, 'Facebook', ['Elzero', 'Web', 'School']]
+
+console.log(
+  words[words.length - true][0].slice(words.length - true).toLocaleUpperCase(),
+) // ZERO
+
+console.log('----------------exercice5-----------------')
+
+let needle = 'JS'
+let haystack = ['PHP', 'JS', 'Python']
+
+if (haystack.includes(needle)) {
+  console.log('we founf it')
+}
+
+if (haystack.indexOf(needle) != -1) {
+  console.log('we founf it')
+}
+
+if (haystack.lastIndexOf != -1) {
+  console.log('we founf it')
+}
+
+console.log('----------------exercice6-----------------')
+
+let arr1 = ['A', 'C', 'X']
+let arr2 = ['D', 'E', 'F', 'Y']
+let allArrs = []
+
+allArrs = arr1.concat(arr2).sort().slice(arr2.length).join('').toLowerCase()
+console.log(allArrs) // fxy
