@@ -1,0 +1,64 @@
+function showDetails(a, b, c) {
+  (typeof a === "string") & (typeof b === "number") & (typeof c === "boolean")
+    ? console.log(
+        `Hello ${a}, Your Age Is ${b} ,,${
+          c == true
+            ? (c = "You Are Available For Hire")
+            : (c = "You not Are Available For Hire")
+        } `
+      )
+    : (a === "string") & (typeof b === "boolean") & (typeof c === "number")
+    ? console.log(
+        `Hello ${a}, Your Age Is ${c} ,${
+          b == true
+            ? (b = "You Are Available For Hire")
+            : (b = "You not Are Available For Hire")
+        } `
+      )
+    : (typeof a === "number") &
+      (typeof b === "string") &
+      (typeof c === "boolean")
+    ? console.log(
+        `Hello ${b}, Your Age Is ${a} ,${
+          c == true
+            ? (c = "You Are Available For Hire")
+            : (c = "You not Are Available For Hire")
+        } `
+      )
+    : (typeof a === "number") &
+      (typeof b === "boolean") &
+      (typeof c === "string")
+    ? console.log(
+        `Hello ${c}, Your Age Is ${a} ,${
+          b == true
+            ? (b = "You Are Available For Hire")
+            : (b = "You not Are Available For Hire")
+        } `
+      )
+    : (typeof a === "boolean") &
+      (typeof b === "string") &
+      (typeof c === "number")
+    ? console.log(
+        `Hello ${b}, Your Age Is ${c} ,,${
+          a == true
+            ? (a = "You Are Available For Hire")
+            : (a = "You not Are Available For Hire")
+        } `
+      )
+    : (typeof a === "boolean") &
+      (typeof b === "number") &
+      (typeof c === "string")
+    ? console.log(
+        `Hello ${c}, Your Age Is ${b} ,${
+          a == true
+            ? (a = "You Are Available For Hire")
+            : (a = "You not Are Available For Hire")
+        }} `
+      )
+    : console.log("parametre not valid");
+}
+
+showDetails("Osama", 38, true); // "Hello Osama, Your Age Is 38, You Are Available For Hire"
+showDetails(38, "Osama", true); // "Hello Osama, Your Age Is 38, You Are Available For Hire"
+showDetails(true, 38, "Osama"); // "Hello Osama, Your Age Is 38, You Are Available For Hire"
+showDetails(false, "Osama", 38); // "Hello Osama, Your Age Is 38, You Are Not Available For Hire"
