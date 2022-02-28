@@ -1,0 +1,24 @@
+let friends = ["ahmed", "rami", "Anwar"];
+
+let friendwithA = friends.filter((el) => (el[0] == "a") | (el[0] == "A"));
+console.log(friendwithA);
+
+let num = [2, 5, 8, 12, 1];
+let numpair = num.filter((el) => el % 2 == 0);
+console.log(numpair);
+
+let sentence = "I loove foot code to playing much";
+let lessthenfour = sentence
+  .split(" ")
+  .filter((el) => el.length <= 4)
+  .join(" ");
+console.log(lessthenfour);
+
+let mix = "A13BS2zx";
+let result = mix
+  .split("")
+  .filter((el) => !isNaN(parseInt(el)))
+  .map((ele, index, arr) =>
+    !isNaN(parseInt(ele * arr[index + 1])) ? ele * arr[index + 1] : 0
+  );
+console.log(result.slice(0, result.length - 1).join(""));

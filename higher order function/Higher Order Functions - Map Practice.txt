@@ -1,0 +1,46 @@
+let swappingcase = "elZERo";
+
+// let newarr = [];
+
+// function swapping(text) {
+//   newarr = swappingcase.split("");
+//   for (i = 0; i < newarr.length; i++) {
+//     //console.log(newarr[i])
+//     if (newarr[i] == newarr[i].toLocaleLowerCase()) {
+//       newarr[i] = newarr[i].toLocaleUpperCase();
+//     } else {
+//       newarr[i] = newarr[i].toLocaleLowerCase();
+//     }
+//   }
+//   return newarr.join("");
+// }
+
+// console.log(swapping(swappingcase));
+
+let withmap = swappingcase
+  .split("")
+  .map(
+    (element, index, nr) =>
+      element == element.toLocaleLowerCase()
+        ? element.toLocaleUpperCase()
+        : element.toLocaleLowerCase(),
+    this
+  );
+
+console.log(withmap.join(""));
+
+console.log("--------exercice2-----------------");
+
+let invertednumbers = [1, 20, -3, -4, 5];
+
+let inverarray = invertednumbers.map((ele) => -ele, this);
+console.log(inverarray);
+console.log("--------exercice3-----------------");
+
+ignorenumber = "sai123d";
+
+let stringwithoutnumber = ignorenumber
+  .split("")
+  .map((ele) => (isNaN(parseInt(ele)) ? ele : ""), this)
+  .join("");
+console.log(stringwithoutnumber);

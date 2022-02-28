@@ -1,0 +1,49 @@
+let mix = [1, 2, 3, "E", 4, "l", "z", "e", "r", 5, "o"];
+
+// Elzero
+
+let newarr = mix
+  .map(function (el) {
+    return isNaN(parseInt(el)) ? el : "";
+  }, this)
+  .reduce((acc, curent) => acc + curent);
+console.log(newarr);
+
+console.log("---------------exercice2-------------");
+
+let myString = "EElllzzzzzzzeroo";
+let newstring = myString
+  .split("")
+  .filter((el, index, arr) => (el == arr[index + 1] ? "" : el))
+  .join("");
+console.log(newstring);
+
+console.log("---------------exercice3-------------");
+
+let myArray = ["E", "l", "z", ["e", "r"], "o"];
+let flat = myArray
+  .reduce(function (acc, current) {
+    return acc.concat(current);
+  }, [])
+  .join("");
+console.log(flat);
+// console.log(Array.flat().toSource());
+
+console.log("---------------exercice4-------------");
+
+let numsAndStrings = [1, 10, -10, -20, 5, "A", 3, "B", "C"];
+
+let inversnum = numsAndStrings
+  .filter((el) => !isNaN(parseInt(el)))
+  .map((em) => -em);
+console.log(inversnum);
+
+console.log("---------------exercice4-------------");
+
+let nums = [2, 12, 11, 5, 10, 1, 99];
+
+let numse = nums.reduce(function (acc, current) {
+  return current % 2 == 0 ? acc * current : acc + current;
+}, 1);
+
+console.log(numse);
