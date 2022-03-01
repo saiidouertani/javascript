@@ -1,23 +1,15 @@
-let mystr = "1,2,3,EE,l,z,e,r,o,_,W,e,b,_,S,c,h,o,o,l,2,0,Z";
+let submite = document.forms[0];
+let result = document.querySelector(".results");
+let numberele = document.querySelectorAll(".input");
 
-let web = mystr
-  .split(",")
-  .filter(function (el) {
-    return isNaN(el);
-  })
-  .map(function (el) {
-    if (el === "EE") {
-      el = "E";
-    }
-    if (el === "_") {
-      el = " ";
-    }
-    if (el === "Z") {
-      el = "";
-    }
-    return el;
-  })
-  .reduce(function (acc, curent) {
-    return acc + curent;
-  });
-console.log(web);
+console.log(numberele);
+submite.onsubmit = function (e) {
+  e.preventDefault();
+  result.remove;
+  for (i = 0; i < parseInt(numberele[0].value); i++) {
+    let appelem = document.createElement("div");
+    appelem.innerHTML = numberele[1].value;
+
+    result.appendChild(appelem);
+  }
+};

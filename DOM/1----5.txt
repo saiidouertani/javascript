@@ -1,0 +1,37 @@
+// let source = document.querySelectorAll("img");
+// console.log(source);
+// for (i = 0; i < source.length; i++) {
+//   source[i].src = "https://elzero.org/wp-content/themes/elzero/imgs/logo.png";
+//   source[i].setAttribute("alt", "Elzero Logo");
+// }
+
+let input = document.querySelector("input");
+let result = document.querySelector(".result");
+input.oninput = function () {
+  let valeursaisie = input.value;
+  console.log(result.childNodes);
+  result.textContent = `${valeursaisie} USD Dollar = ${Number.parseFloat(
+    valeursaisie * 15.6
+  ).toFixed(2)} Egyptian Pound
+  `;
+};
+
+let one = document.querySelector(".one");
+let v = one.title;
+let text = one.textContent;
+
+let two = document.querySelector(".two");
+one.title = two.title;
+two.title = v;
+one.textContent = two.textContent;
+two.textContent = text + "2";
+
+let images = document.querySelector(".exercice").querySelectorAll("img");
+
+for (i = 0; i < images.length; i++) {
+  if (images[i].hasAttribute("alt") == true) {
+    images[i].setAttribute("alt", "Old");
+  } else {
+    images[i].setAttribute("alt", "New");
+  }
+}

@@ -1,0 +1,14 @@
+for (i = 0; i < 100; i++) {
+  let product = document.createElement("div");
+
+  product.className = "product";
+  let title = document.createElement("h3");
+  let titletext = document.createTextNode("happyunited");
+  title.appendChild(titletext);
+  let para = document.createElement("p");
+  let paratext = document.createTextNode(`my product [${i}] is specefic`);
+  para.appendChild(paratext);
+  product.appendChild(title);
+  product.appendChild(para);
+  document.body.appendChild(product);
+}
