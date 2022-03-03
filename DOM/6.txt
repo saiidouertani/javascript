@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/Main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <input
+        type="number"
+        name="elements"
+        class="input"
+        placeholder="Number Of Elements"
+      />
+      <input
+        type="text"
+        name="texts"
+        class="input"
+        placeholder="Elements Text"
+      />
+      <select name="type" class="input">
+        <option value="Div">Div</option>
+        <option value="Section">Section</option>
+      </select>
+      <input type="submit" name="create" value="Create" class="test" />
+      <div class="results">saiid</div>
+    </form>
+
+    <script src="main.js"></script>
+  </body>
+</html>
+------------------------------------------------------------------------------------------------
+let form = document.forms[0];
+form.style = "width:500px; margin:20px auto;";
+let result = document.querySelector(".results");
+result.style =
+  "display:flex; justify-content:space-between;flex-wrap:wrap;margin-top:20px";
+let numberele = document.querySelectorAll(".input");
+let butt = document.querySelectorAll("input[type='submit']");
+butt[0].style =
+  "display:block;margin:20px auto; height:30px; width:200px; border-radius:10px ;border:none;background-color:green;color:white";
+numberele.forEach((element) => {
+  element.style =
+    "display:block;margin:20px auto; height:30px; width:200px; border-radius:10px ;border:none;";
+});
+
+form.onsubmit = function (e) {
+  e.preventDefault();
+  console.log(numberele[0].textContent);
+
+  while (result.children.length != 0) {
+    result.firstChild.remove();
+  }
+
+  for (i = 0; i < parseInt(numberele[0].value); i++) {
+    let appelem = document.createElement(numberele[2].value);
+    appelem.innerHTML = numberele[1].value;
+    appelem.style =
+      "color:white; padding:20px ;margin-top:20px;background-color:yellow;font-weight:bold; width:20%;border-radius:20px;text-align:center";
+
+    result.appendChild(appelem);
+  }
+  console.log(result.textContent);
+};
