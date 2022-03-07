@@ -1,85 +1,79 @@
-let input = document.querySelector("input");
-let button = document.querySelector(".add");
-button.style = "cursor:clickable";
-let list = document.querySelector(".listelement");
-let tabobj = [];
+//window.localStorage.clear()
 
+let input = document.querySelector('input')
+let button = document.querySelector('.add')
+button.style = 'cursor:clickable'
+let list = document.querySelector('.listelement')
+let tabobj = []
+let table = []
+console.log(window.localStorage.getItem('task'))
+if (window.localStorage.getItem('task') != null) {
+  table = JSON.parse(window.localStorage.getItem('task'))
+  table.forEach((element) => {
+    list.appendChild(createelementt(element.title, element.id))
+  })
+}
 button.onclick = function () {
-  window.localStorage.clear();
-
-  if (input.value != "") {
-    let elementtoadd = createelement(input.value);
-    list.appendChild(elementtoadd);
+  if (input.value != '') {
+    let elementtoadd = createelement(input.value)
+    list.appendChild(elementtoadd)
+    input.value = ''
   }
-};
-list.addEventListener("click", function (e) {
-  let target = e.target;
-  console.log(target);
+}
+list.addEventListener('click', function (e) {
+  let target = e.target
+  let supptable = JSON.parse(window.localStorage.getItem('task'))
 
-  target.onclick = function () {
-    list.removeChild(target.parentElement);
-  };
-});
+  let filter = supptable.filter((e) => e.id != target.parentElement.id)
+  window.localStorage.setItem('task', JSON.stringify(filter))
+  console.log(filter)
+
+  list.removeChild(target.parentElement)
+})
 
 function createelement(text) {
-  let element = document.createElement("div");
+  let element = document.createElement('div')
   element.style =
-    "display:flex; justify-content:space-between;width:400px;background-color:white;align-items:center;border-radius:10px;padding-right:10px";
-  let para = document.createElement("p");
-  para.textContent = text;
-  let del = document.createElement("span");
-  del.textContent = "Delete";
+    'display:flex; justify-content:space-between;width:400px;background-color:white;align-items:center;border-radius:10px;padding-right:10px;margin-top:10px'
+  let para = document.createElement('p')
+  para.textContent = text
+  let del = document.createElement('span')
+  del.textContent = 'Delete'
   del.style =
-    "background-color:red; color white;height:fit-content;padding:5px 10px;border-radius:10px";
-  element.appendChild(para);
-  element.appendChild(del);
+    'background-color:red; color white;height:fit-content;padding:5px 10px;border-radius:10px'
+  element.appendChild(para)
+  element.appendChild(del)
   let obj = {
     id: Math.random(),
     title: text,
-  };
+  }
 
-  tabobj.push(obj);
-------------------------------------------------------------------------------------------
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,100;1,500&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&family=Open+Sans:ital,wght@0,300;0,400;0,700;0,800;1,400&family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,100;1,500&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/Main.css" />
-    <style></style>
-  </head>
-  <body>
-    <div class="input">
-      <input type="text" />
-      <div class="add">Add Task</div>
-    </div>
-    <div class="listelement">
-    
-    </div>
+  tabobj.push(obj)
+  console.log(tabobj)
+  window.localStorage.setItem('task', JSON.stringify(tabobj))
+  element.id = obj.id
+  return element
+}
 
-    <script src="main.js"></script>
-  </body>
-</html>
+function createelementt(text, idd) {
+  let element = document.createElement('div')
+  element.style =
+    'display:flex; justify-content:space-between;width:400px;background-color:white;align-items:center;border-radius:10px;padding-right:10px;margin-top:10px'
+  let para = document.createElement('p')
+  para.textContent = text
+  let del = document.createElement('span')
+  del.textContent = 'Delete'
+  del.style =
+    'background-color:red; color white;height:fit-content;padding:5px 10px;border-radius:10px'
+  element.appendChild(para)
+  element.appendChild(del)
+  let obj = {
+    id: idd,
+    title: text,
+  }
 
-  console.log(tabobj);
-  window.localStorage.setItem("task", JSON.stringify(tabobj));
-  return element;
+  tabobj.push(obj)
+
+  element.id = obj.id
+  return element
 }
