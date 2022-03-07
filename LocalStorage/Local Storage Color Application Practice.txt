@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial scale=1.0" />
+    <link rel="stylesheet" href="css/Main.css" />
+    <style>
+      body {
+        background-color: #eee;
+      }
+      ul {
+        padding: 0;
+        margin: 0;
+        background-color: #ddd;
+        margin: 20px auto;
+        padding: 20px;
+        width: 400px;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+      }
+      ul li {
+        width: 60px;
+        height: 60px;
+        border: 2px solid transparent;
+        opacity: 0.4;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      ul li.active,
+      ul li:hover {
+        opacity: 1;
+      }
+      ul li:first-child {
+        background-color: red;
+      }
+      ul li:nth-child(2) {
+        background-color: green;
+      }
+      ul li:nth-child(3) {
+        background-color: blue;
+      }
+      ul li:nth-child(4) {
+        background-color: black;
+      }
+      .experiment {
+        background-color: red;
+        width: 600px;
+        height: 300px;
+        margin: 20px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li class="active" data-color="red"></li>
+      <li data-color="green"></li>
+      <li data-color="blue"></li>
+      <li data-color="black"></li>
+    </ul>
+    <div class="experiment"></div>
+    <script src="main.js"></script>
+  </body>
+</html>
+-------------------------------------------------------------------------------------------------------------------------------
+list = document.querySelectorAll("ul");
+let color = document.getElementsByClassName("experiment");
+list[0].addEventListener("click", function (e) {
+  var target = e.target;
+  let inputcolor = target.getAttribute("data-color");
+  color[0].style = `background-color:${inputcolor}`;
+  color[0].setAttribute("data-color", inputcolor);
+  window.localStorage.setItem("item-color", inputcolor);
+  let i = 0;
+  console.log(list[0].children.length);
+  while (i < list[0].children.length) {
+    list[0].children[i].classList.remove("active");
+    i++;
+  }
+  target.className = "active";
+});
+
+window.onload = function () {
+  let colorstorage = window.localStorage.getItem("item-color");
+  color[0].style = `background-color:${colorstorage}`;
+};
+
+
+window.onload = function () {
+  let colorstorage = window.localStorage.getItem("item-color");
+  color[0].style = `background-color:${colorstorage}`;
+};

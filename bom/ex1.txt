@@ -1,0 +1,11 @@
+let value = window.prompt("Print Number From");
+console.log(value);
+let tab = value.split("-");
+console.log(tab);
+if (tab[1] < tab[0]) {
+  tab = tab.reverse();
+}
+for (i = parseInt(tab[0]); i <= tab[1]; i++) {
+  console.log(i);
+  15 - 50;
+}

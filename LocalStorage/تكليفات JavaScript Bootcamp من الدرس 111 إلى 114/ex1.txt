@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,100;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800&family=Open+Sans:ital,wght@0,300;0,400;0,700;0,800;1,400&family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,100;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/Main.css" />
+    <style></style>
+  </head>
+  <body>
+    <div class="parent">
+      <label for="">Font:</label>
+      <select name="font" id="font">
+        <option value="cairo">Cairo</option>
+        <option value="sans-serif">Sans Serif</option>
+        <option value="Roboto">Roboto</option>
+      </select>
+      <label for="">Color</label>
+      <select name="font" id="">
+        <option value="red" style="background-color: red">Red</option>
+        <option value="black" style="background-color: black; color: white">
+          Black
+        </option>
+        <option value="green" style="background-color: green">Green</option>
+        <option value="yellow" style="background-color: yellow">Yellow</option>
+        <option value="blue" style="background-color: blue">Blue</option>
+        <option value="orange" style="background-color: orange">Orange</option>
+      </select>
+      <label for="">Size</label>
+      <input type="number" name="" id="" max="30" min="15" value="15" />
+      <div class="elementtodisplay">Saiid</div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
+-------------------------------------------------------------------------------------------------
+
+   let select = document.querySelectorAll("select");
+let size = document.querySelector("input");
+let element = document.querySelector(".elementtodisplay");
+if (window.localStorage.length != 0) {
+  element.style = `font-family:${window.localStorage.getItem("font-family")};
+    color:${window.localStorage.getItem("color")};
+    font-size:${window.localStorage.getItem("size")}px;`;
+  select[0].value = window.localStorage.getItem("font-family");
+  select[1].value = window.localStorage.getItem("color");
+  size.value = window.localStorage.getItem("size");
+}
+window.onchange = function () {
+  console.log(size.value);
+  element.style = `font-family:${select[0].value};
+  color:${select[1].value};
+  font-size:${size.value}px;`;
+  window.localStorage.setItem("font-family", select[0].value);
+  window.localStorage.setItem("color", select[1].value);
+  window.localStorage.setItem("size", size.value);
+};
+

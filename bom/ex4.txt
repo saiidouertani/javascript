@@ -1,0 +1,25 @@
+document.body.style =
+  "display:flex;justify-content:center;align-items:center; height:700px ;width:700px";
+
+let div = document.querySelector("div");
+div.style = "font-size: 80px;font-family: sans-serif;color: blue;";
+console.log(typeof parseInt(div.textContent));
+
+window.setInterval(counter, 1000);
+
+function counter() {
+  let num = parseInt(div.textContent);
+                                                                      
+  while (num > 0) {
+    num -= 1;
+    div.textContent = num;
+    if (num == 8) {
+      window.open(
+        "https://elzero.org/",
+        "_blank",
+        "width=420,height=230,top=500,left=200"
+      );
+    }
+    return num;
+  }
+}

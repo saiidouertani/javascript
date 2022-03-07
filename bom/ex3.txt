@@ -1,0 +1,23 @@
+function createpopup() {
+  let div = document.createElement("div");
+  let title = document.createElement("h1");
+  title.textContent = "Welcome";
+  let para = document.createElement("p");
+
+  para.textContent = "Welcome to elzro web school";
+  div.style =
+    "padding:20px; background-color:#eee ;width:300px; height:150px;margin:20px auto;text-align:center; position:relative; box-shadow: 2px 2px #7777774a, -2px -2px #77777740;";
+  document.body.appendChild(div);
+  let after = document.createElement("div");
+  after.style =
+    "width:20px;height:20px; background-color:red;position:absolute;right:-15px; top:-15px; padding:5px;color:white;font-weight:bold;border-radius:50%;cursor:pointer;";
+  after.textContent = "X";
+  div.appendChild(after);
+  div.appendChild(title);
+  div.appendChild(para);
+  after.onclick = function () {
+    div.style = "display:none";
+  };
+}
+
+window.setTimeout(createpopup, 3000);
